@@ -1,0 +1,13 @@
+name: tb_provusg
+title: tb_provusg
+username: takuya-yamanaka
+account: takuya-yamanaka
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 14287228
+bundleId: 9976163
+url: https://takuya-yamanaka.shinyapps.io/tb_provusg/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: sitefinity.docx

@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.Rproj
+tb_provusg.Rproj
+
+# Make sure any folder called "local" is ignored
+local/

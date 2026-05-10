@@ -1,0 +1,13 @@
+name: tb_provusg
+title: tb_provusg
+username: worldhealthorg
+account: worldhealthorg
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 14295561
+bundleId: 9976175
+url: https://worldhealthorg.shinyapps.io/tb_provusg/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: sitefinity.docx
