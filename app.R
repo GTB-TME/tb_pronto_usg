@@ -24,14 +24,15 @@ library(stringr)
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # load WIDP files
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-source(here("import/load_gtb.R"))
-snapshot_date <- latest_snapshot_date()
 report_year <- 2025 # update once the GTBR of the year released
 current_year <- year(Sys.Date()) 
 
-tb <- load_gtb("tb") |>
+load(paste0(here::here("local/tb.rda")))
+
+tb <- tb |>
   arrange(iso3)
-provisional <- load_gtb("provisional")
+
+load(paste0(here::here("local/provisional.rda")))
 
 # define full sequence
 years <- 2021:current_year
@@ -157,7 +158,7 @@ ui <-
 
                     # Add app version number and links to GTB and Github
                     HTML(paste0(app_version,
-                                ", Source code on <a href='https://github.com/yamanakatakuya/tb_provusg/' target='_blank'>Github</a>.
+                                ", Source code on <a href='https://github.com/GTB-TME/tb_pronto_usg/' target='_blank'>Github</a>.
                                   Data collected and published by the
                                   <a href='https://www.who.int/teams/global-tuberculosis-programme/data' target='_blank'>
                             World Health Organization</a>.</i>"))
