@@ -232,13 +232,16 @@ server <- function(input, output, session) {
         values_from = newinc_prov
       )  |>
       mutate(
-        report_frequency = if_any(
-          any_of(c("q_1", "q_2", "q_3", "q_4")),
-          ~ !is.na(.)
-        ) |>
-          ifelse(71, 70),
+        has_monthly = if_any(any_of(sprintf("m_%02d", 1:12)), ~ !is.na(.)),
+        has_quarterly = if_any(any_of(paste0("q_", 1:4)), ~ !is.na(.)),
+        report_frequency = case_when(
+          has_monthly ~ 70,
+          has_quarterly ~ 71,
+          TRUE ~ 70
+        ),
         report_coverage = 34
       ) |>
+      select(!has_monthly & !has_quarterly) |>
       arrange(year)
     
     c_newinc_year <- tb |>
