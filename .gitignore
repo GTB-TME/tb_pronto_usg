@@ -3,7 +3,10 @@
 .RData
 .Ruserdata
 .Rproj
+.dcf
 tb_provusg.Rproj
+rsconnect
+README.html
 
 # Make sure any folder called "local" is ignored
 local/
