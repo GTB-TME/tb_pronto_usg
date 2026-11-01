@@ -24,7 +24,7 @@ library(stringr)
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # load WIDP files
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-report_year <- 2025 # update once the GTBR of the year released
+report_year <- 2026 # update once the GTBR of the year released
 current_year <- year(Sys.Date()) 
 
 load(paste0(here::here("local/tb.rda")))

@@ -116,7 +116,8 @@ output$prov_usaid_plot <- renderEcharts4r({
   
   # Get the total notification for 2019 (final pre-pandemic year) and calculate the average monthly or quarterly
   pretrump <- pdata()$c_newinc_year |>
-    filter(year == max(year) & year < 2025) |>
+    filter(year < 2025) |>
+    filter(year == max(year)) |>
     select(c_newinc)
   
   pretrump_year_avge <- ifelse(frequency == 71, pretrump/4, pretrump/12) |> as.numeric()
@@ -124,7 +125,8 @@ output$prov_usaid_plot <- renderEcharts4r({
   current_yearmonth <- Sys.Date()
   
   pretrump_year <- pdata()$c_newinc_year |>
-    filter(year == max(year) & year < 2025) |>
+    filter(year < 2025) |>
+    filter(year == max(year)) |>
     select(year) |>
     as.numeric()
   
