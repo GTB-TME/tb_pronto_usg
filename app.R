@@ -112,7 +112,7 @@ ui <-
     "USAID priority countries in 2024",
   #--------------------- by country ---------------------#
   fluidPage(theme = shinytheme("sandstone"),
-  title = "Provisional number of people notified with new or relapse episodes of TB",
+  title = "Provisional number of people notified with new or recurrent episodes of TB",
 
   # add CSS to colour headings and to prevent printing of the country selector dropdown
   tags$style(HTML("
