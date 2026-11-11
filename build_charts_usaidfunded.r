@@ -4,7 +4,7 @@
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-# Build an Echarts line graph of annual new and relapse cases
+# Build an Echarts line graph of annual new and recurrent cases
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 output$annual_usaid_plot <- renderEcharts4r({
@@ -66,7 +66,7 @@ output$annual_usaid_plot <- renderEcharts4r({
 
 
 
-# Build an Echarts line graph of monthly or quarterly provisional new and relapse cases
+# Build an Echarts line graph of monthly or quarterly provisional new and recurrent cases
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 output$prov_usaid_plot <- renderEcharts4r({
@@ -243,7 +243,7 @@ output$annual_heading <- renderText({
   # Make sure there are data to plot
   req(pdata()$dcyear_published)
   
-  paste0("Number of people with new or relapse episodes of TB notified per year, ",
+  paste0("Number of people with new or recurrent episodes of TB notified per year, ",
          # timeseries starts 5 years before the most recent year of publication
          "2022",
          "\u2013",
@@ -263,7 +263,7 @@ output$provisional_heading <- renderText({
   frequency <- as.numeric(min(pdata()$c_newinc_prov$report_frequency))
   period_name  <- ifelse(frequency == 71, "quarter", "month")
   
-  paste0("Provisional* number of people with new or relapse episodes of TB notified per ",
+  paste0("Provisional* number of people with new or recurrent episodes of TB notified per ",
          period_name)
 })
 
